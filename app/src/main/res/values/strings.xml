@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">GamePoint Control</string>
+
+    <!-- Главный экран -->
+    <string name="main_title">GamePoint Control</string>
+    <string name="enable_bt">Включить Bluetooth</string>
+    <string name="scan">Сканировать</string>
+    <string name="scanning">Поиск устройств…</string>
+    <string name="bt_already_on">Bluetooth уже включён</string>
+    <string name="status_no_adapter">Bluetooth-адаптер отсутствует на этом устройстве</string>
+    <string name="status_bt_off">Bluetooth выключен — нажмите «Включить Bluetooth»</string>
+    <string name="status_disconnected">Устройство не подключено</string>
+    <string name="status_connecting">Подключение…</string>
+    <string name="status_connected">Подключено: %1$s (%2$s)</string>
+    <string name="hint_no_devices">Устройства не найдены. Убедитесь, что Bluetooth на устройстве Arduino включён и оно не занято другим подключением.</string>
+    <string name="unknown_device">(без имени)</string>
+
+    <!-- Состояния устройства в списке -->
+    <string name="state_not_bonded">Не сопряжено</string>
+    <string name="state_bonding">Сопряжение…</string>
+    <string name="state_bonded">Сопряжено</string>
+    <string name="state_connecting">Подключение…</string>
+    <string name="state_connected">Подключено</string>
+
+    <!-- Кнопки действий над устройством -->
+    <string name="bond">Сопряжение</string>
+    <string name="connect">Подключить</string>
+    <string name="disconnect">Отключить</string>
+    <string name="forget">Забыть</string>
+    <string name="manage">Управление</string>
+
+    <!-- Сопряжение / удаление -->
+    <string name="bond_started">Сопряжение начато. Если система запросит PIN — используйте 1234 или 0000 (можно ввести вручную).</string>
+    <string name="bond_success">Сопряжение выполнено успешно</string>
+    <string name="already_bonded">Устройство уже сопряжено</string>
+    <string name="err_bond_failed">Не удалось начать сопряжение. Проверьте, что устройство доступно, и повторите попытку.</string>
+    <string name="forget_title">Удалить сопряжение?</string>
+    <string name="forget_message">Удалить информацию о сопряжении с «%1$s»? Активное подключение будет разорвано.</string>
+    <string name="unpair_done">Сопряжение удалено</string>
+    <string name="unpair_fallback_title">Удаление сопряжения</string>
+    <string name="unpair_fallback_message">Текущая версия Android не позволяет приложению удалять сопряжение напрямую. Откройте системный экран Bluetooth и удалите устройство вручную: выберите его в списке и нажмите «Забыть устройство».</string>
+    <string name="open_settings">Открыть настройки Bluetooth</string>
+
+    <!-- Переподключение -->
+    <string name="reconnect_title">Предыдущее устройство</string>
+    <string name="reconnect_message">Подключиться к последнему использованному устройству «%1$s»?</string>
+    <string name="auto_reconnect_on">Автоматическое переподключение включено</string>
+    <string name="auto_reconnect_off">Автоматическое переподключение отключено</string>
+
+    <!-- Ошибки -->
+    <string name="err_no_bt_adapter">На устройстве нет Bluetooth-адаптера</string>
+    <string name="err_bt_not_enabled">Bluetooth не включён. Без него работа невозможна.</string>
+    <string name="err_cannot_request_enable">Не удалось запросить включение Bluetooth</string>
+    <string name="err_perms_denied">Выданы не все разрешения (%1$s). Сканирование и подключение могут быть недоступны.</string>
+    <string name="err_open_settings">Не удалось открыть системные настройки Bluetooth</string>
+    <string name="err_not_connected">Устройство не подключено</string>
+    <string name="err_win_time">Время удержания должно быть больше 0.05 мин</string>
+    <string name="err_delay">Задержка перехвата должна быть ≥ 0 секунд</string>
+    <string name="err_interval">Интервал воскрешения должен быть целым и больше 0 минут</string>
+    <string name="err_no_response">Устройство не ответило на команду «%1$s» в течение 3 секунд</string>
+    <string name="connection_lost_return">Соединение потеряно. Возврат на главный экран.</string>
+
+    <!-- Общие -->
+    <string name="ok">ОК</string>
+    <string name="cancel">Отмена</string>
+    <string name="save">Сохранить</string>
+
+    <!-- Меню -->
+    <string name="menu_presets">Пресеты</string>
+    <string name="menu_log">Журнал</string>
+    <string name="menu_auto_reconnect">Автопереподключение</string>
+
+    <!-- Экран устройства -->
+    <string name="device_title">Устройство</string>
+    <string name="type_capture">Точка захвата</string>
+    <string name="type_medkit">Аптечка</string>
+    <string name="device_type_label">Тип устройства</string>
+    <string name="win_time_label">Время удержания WIN_TIME, мин (напр. 1.5 = 1 мин 30 с)</string>
+    <string name="delay_label">Задержка перехвата switchDelay, с (рекомендуется 30–90)</string>
+    <string name="interval_label">Интервал воскрешения, мин (целое число)</string>
+    <string name="apply">Применить</string>
+    <string name="reset">Сброс</string>
+    <string name="responses_title">Ответы устройства</string>
+    <string name="sending">Отправка команд…</string>
+    <string name="medkit_note">Аптечка: звук и режим работы всегда включены, отключение не предусмотрено ТЗ.</string>
+    <string name="status_connected_short">Подключено: %1$s</string>
+    <string name="status_disconnected_short">Не подключено</string>
+
+    <!-- Пресеты -->
+    <string name="presets_title">Пресеты</string>
+    <string name="add_preset">Новый пресет</string>
+    <string name="preset_create">Создать пресет</string>
+    <string name="preset_edit">Изменить пресет</string>
+    <string name="preset_delete">Удалить пресет</string>
+    <string name="preset_delete_message">Удалить пресет «%1$s»?</string>
+    <string name="preset_apply">Применить</string>
+    <string name="preset_edit_btn">Изменить</string>
+    <string name="preset_delete_btn">Удалить</string>
+    <string name="preset_applied">Пресет «%1$s» применён</string>
+    <string name="preset_apply_partial">Пресет «%1$s» применён частично: часть команд не подтверждена устройством</string>
+    <string name="presets_empty">Пресетов пока нет. Нажмите «Новый пресет», чтобы создать набор параметров (например, «Сценарий А»).</string>
+    <string name="preset_name_hint">Название (например, Сценарий А)</string>
+    <string name="err_preset_name">Введите название пресета</string>
+
+    <!-- Журнал -->
+    <string name="log_title">Журнал обмена</string>
+    <string name="log_clear">Очистить</string>
+    <string name="log_copy">Копировать</string>
+    <string name="log_clear_message">Очистить весь журнал обмена?</string>
+    <string name="log_copied">Журнал скопирован в буфер обмена</string>
+    <string name="log_empty">Журнал пуст</string>
+</resources>
