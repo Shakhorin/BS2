@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GamePointControl.Pages.LogPage"
+             Title="Журнал обмена">
+
+    <Grid RowDefinitions="Auto,*" Padding="16">
+        <HorizontalStackLayout Grid.Row="0" Spacing="8" Margin="0,0,0,12">
+            <Button Text="Очистить" Clicked="OnClear" />
+            <Button Text="Копировать" Clicked="OnCopy" />
+        </HorizontalStackLayout>
+        <ScrollView Grid.Row="1" BackgroundColor="#F5F5F5">
+            <Label x:Name="LogText" FontFamily="Monospace" FontSize="12" Padding="8" />
+        </ScrollView>
+    </Grid>
+</ContentPage>

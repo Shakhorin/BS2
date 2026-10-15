@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GamePointControl.Pages.MainPage"
+             Title="GamePoint Control">
+
+    <ScrollView Padding="16">
+        <VerticalStackLayout Spacing="12">
+
+            <!-- Индикатор текущего подключения -->
+            <Label x:Name="ConnStatus"
+                   Text="Не подключено"
+                   FontSize="16"
+                   FontAttributes="Bold" />
+
+            <!-- Управление адаптером и сканированием -->
+            <HorizontalStackLayout Spacing="8">
+                <Button x:Name="BtnEnableBt" Text="Включить Bluetooth" Clicked="OnEnableBluetooth" />
+                <Button x:Name="BtnScan" Text="Сканировать" Clicked="OnScan" />
+                <Button x:Name="BtnRefresh" Text="Обновить" Clicked="OnRefresh" />
+            </HorizontalStackLayout>
+
+            <Label x:Name="ScanHint"
+                   Text="Найдено устройств: 0"
+                   TextColor="Gray" />
+
+            <!-- Список доступных устройств -->
+            <CollectionView x:Name="DeviceList"
+                            ItemsLayout="VerticalList"
+                            SelectionMode="Single"
+                            SelectionChanged="OnDeviceSelected">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="8" ColumnDefinitions="*,Auto">
+                            <VerticalStackLayout Grid.Column="0">
+                                <Label Text="{Binding DisplayName}" FontSize="15" />
+                                <Label Text="{Binding StatusText}"
+                                       FontSize="12"
+                                       TextColor="{Binding StatusColor}" />
+                            </VerticalStackLayout>
+                            <Label Grid.Column="1"
+                                   Text="{Binding RssiText}"
+                                   VerticalOptions="Center"
+                                   TextColor="Gray" />
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <!-- Действия для выбранного устройства (ТЗ 5.2) -->
+            <Label x:Name="SelectedInfo" Text="Устройство не выбрано" TextColor="Gray" />
+            <FlexLayout Wrap="Wrap" JustifyContent="Start">
+                <Button x:Name="BtnPair" Text="Сопряжение" Clicked="OnPair" IsEnabled="False" Margin="0,0,8,8" />
+                <Button x:Name="BtnConnect" Text="Подключить" Clicked="OnConnect" IsEnabled="False" Margin="0,0,8,8" />
+                <Button x:Name="BtnDisconnect" Text="Отключить" Clicked="OnDisconnect" IsEnabled="False" Margin="0,0,8,8" />
+                <Button x:Name="BtnForget" Text="Забыть" Clicked="OnForget" IsEnabled="False" Margin="0,0,8,8" />
+            </FlexLayout>
+
+            <BoxView HeightRequest="1" Color="LightGray" Margin="0,8" />
+
+            <!-- Переходы на другие экраны -->
+            <HorizontalStackLayout Spacing="8">
+                <Label Text="Автопереподключение" VerticalOptions="Center" />
+                <Switch x:Name="AutoReconnectSwitch" Toggled="OnAutoReconnectToggled" />
+            </HorizontalStackLayout>
+
+            <Button Text="Пресеты" Clicked="OnPresets" />
+            <Button Text="Журнал обмена" Clicked="OnLog" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

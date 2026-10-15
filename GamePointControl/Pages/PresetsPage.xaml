@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GamePointControl.Pages.PresetsPage"
+             Title="Пресеты">
+
+    <Grid RowDefinitions="Auto,*" Padding="16">
+        <Button Grid.Row="0" Text="Создать пресет" Clicked="OnCreate" Margin="0,0,0,12" />
+        <CollectionView Grid.Row="1" x:Name="PresetList">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <VerticalStackLayout Padding="8" Spacing="4">
+                        <Label Text="{Binding DisplayTitle}" FontSize="16" FontAttributes="Bold" />
+                        <Label Text="{Binding DisplayParams}" FontSize="13" TextColor="Gray" />
+                        <HorizontalStackLayout Spacing="8">
+                            <Button Text="Применить" CommandParameter="{Binding .}" Clicked="OnApplyPreset" />
+                            <Button Text="Изменить" CommandParameter="{Binding .}" Clicked="OnEditPreset" />
+                            <Button Text="Удалить" CommandParameter="{Binding .}" Clicked="OnDeletePreset" />
+                        </HorizontalStackLayout>
+                        <BoxView HeightRequest="1" Color="LightGray" />
+                    </VerticalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+</ContentPage>
