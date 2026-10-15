@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ok_green">#2E7D32</color>
+    <color name="warn_orange">#EF6C00</color>
+    <color name="error_red">#C62828</color>
+    <color name="rx_blue">#1565C0</color>
+    <color name="text_secondary">#757575</color>
+    <color name="primary">#303F9F</color>
+    <color name="primary_dark">#1A237E</color>
+    <color name="accent">#FF6F00</color>
+    <color name="ic_launcher_background">#303F9F</color>
+</resources>

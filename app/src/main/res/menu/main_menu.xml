@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_presets"
+        android:title="@string/menu_presets"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_log"
+        android:title="@string/menu_log"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_auto_reconnect"
+        android:checkable="true"
+        android:checked="true"
+        android:title="@string/menu_auto_reconnect"
+        app:showAsAction="never" />
+</menu>

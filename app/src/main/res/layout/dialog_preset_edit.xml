@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Диалог создания/редактирования пресета (ТЗ 4.4.1). -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <EditText
+            android:id="@+id/et_preset_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/preset_name_hint"
+            android:inputType="text"
+            android:importantForAutofill="no" />
+
+        <RadioGroup
+            android:id="@+id/rg_preset_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+
+            <RadioButton
+                android:id="@+id/rb_preset_capture"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="@string/type_capture" />
+
+            <RadioButton
+                android:id="@+id/rb_preset_medkit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/type_medkit" />
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/et_preset_win_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="@string/win_time_label"
+            android:inputType="numberDecimal"
+            android:digits="0123456789.,"
+            android:importantForAutofill="no" />
+
+        <EditText
+            android:id="@+id/et_preset_delay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="@string/delay_label"
+            android:inputType="numberDecimal"
+            android:digits="0123456789.,"
+            android:importantForAutofill="no" />
+
+        <EditText
+            android:id="@+id/et_preset_interval"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="@string/interval_label"
+            android:inputType="number"
+            android:importantForAutofill="no" />
+    </LinearLayout>
+</ScrollView>
