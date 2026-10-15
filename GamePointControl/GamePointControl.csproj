@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>net8.0-android</TargetFrameworks>
+		<OutputType>Exe</OutputType>
+		<RootNamespace>GamePointControl</RootNamespace>
+		<UseMaui>true</UseMaui>
+		<SingleProject>true</SingleProject>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+
+		<ApplicationTitle>GamePoint Control</ApplicationTitle>
+		<ApplicationId>com.gamepoint.control</ApplicationId>
+		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+		<ApplicationVersion>1</ApplicationVersion>
+
+		<!-- Android 5.0 (API 21) по ТЗ; 23 — практический минимум для net8.0-android -->
+		<SupportedOSPlatformVersion>23</SupportedOSPlatformVersion>
+		<TargetPlatformVersion>34</TargetPlatformVersion>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<MauiIcon Include="Resources\AppIcon\appicon.png" />
+	</ItemGroup>
+
+</Project>

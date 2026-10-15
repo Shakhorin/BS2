@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "com.gamepoint.control": {
+      "commandName": "Project",
+      "launchBrowser": false
+    }
+  }
+}

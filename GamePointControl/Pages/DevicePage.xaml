@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GamePointControl.Pages.DevicePage"
+             Title="Устройство">
+
+    <ScrollView Padding="16">
+        <VerticalStackLayout Spacing="12">
+
+            <Label x:Name="ConnStatus" Text="" FontAttributes="Bold" />
+
+            <!-- Выбор типа устройства (ТЗ 5.3) -->
+            <Label Text="Тип устройства:" />
+            <HorizontalStackLayout Spacing="16">
+                <RadioButton x:Name="RbCapture" Content="Точка захвата" IsChecked="True"
+                             CheckedChanged="OnTypeChanged" />
+                <RadioButton x:Name="RbMedkit" Content="Аптечка" CheckedChanged="OnTypeChanged" />
+            </HorizontalStackLayout>
+
+            <!-- Точка захвата: T и D -->
+            <VerticalStackLayout x:Name="CaptureGroup" Spacing="12">
+                <Label Text="Время удержания WIN_TIME, мин (например 1.5 = 1 мин 30 сек)" />
+                <Entry x:Name="EtWinTime" Keyboard="Numeric" Text="1.5"
+                       TextChanged="OnInputChanged" />
+                <Label x:Name="ErrWinTime" Text="" TextColor="#C62828" IsVisible="False" />
+
+                <Label Text="Задержка перехвата switchDelay, сек (рекомендуется 30–90)" />
+                <Entry x:Name="EtDelay" Keyboard="Numeric" Text="45"
+                       TextChanged="OnInputChanged" />
+                <Label x:Name="ErrDelay" Text="" TextColor="#C62828" IsVisible="False" />
+            </VerticalStackLayout>
+
+            <!-- Аптечка: I -->
+            <VerticalStackLayout x:Name="MedkitGroup" Spacing="12" IsVisible="False">
+                <Label Text="Интервал воскрешения, мин (целое число)" />
+                <Entry x:Name="EtInterval" Keyboard="Numeric" Text="10"
+                       TextChanged="OnInputChanged" />
+                <Label x:Name="ErrInterval" Text="" TextColor="#C62828" IsVisible="False" />
+                <Label Text="Звук и режим работы аптечки всегда включены; отключение не предусмотрено."
+                       TextColor="Gray" FontSize="12" />
+            </VerticalStackLayout>
+
+            <HorizontalStackLayout Spacing="8">
+                <Button x:Name="BtnApply" Text="Применить" Clicked="OnApply" />
+                <Button x:Name="BtnReset" Text="Сброс" Clicked="OnReset" />
+            </HorizontalStackLayout>
+
+            <BoxView HeightRequest="1" Color="LightGray" Margin="0,8" />
+
+            <Label Text="Ответы устройства:" />
+            <ScrollView x:Name="ResponsesScroll" HeightRequest="220" BackgroundColor="#F5F5F5">
+                <Label x:Name="TvResponses" Text="" FontFamily="Monospace" FontSize="13"
+                       Padding="8" />
+            </ScrollView>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
